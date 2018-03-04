@@ -60,6 +60,12 @@ class Dog
     sql = "SELECT * FROM dogs WHERE name = ?, breed = ?"
     dog = DB[:conn].execute(sql, hash[name], hash[breed])
 
+    if !dog.empty?
+      self.new_from_db(dog)
+    else
+    self.create(hash)
+  end
+
 
   end
 
