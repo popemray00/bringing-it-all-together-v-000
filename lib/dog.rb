@@ -56,5 +56,10 @@ class Dog
     end.first
   end
 
+  def self.find_or_create_by(hash)
+    sql = "SELECT * FROM dogs WHERE name = ?, breed = ?"
+    
+  end
+
 
 end
